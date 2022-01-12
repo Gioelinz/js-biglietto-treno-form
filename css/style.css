@@ -1,0 +1,45 @@
+body{
+    background-color: #B91450;
+}
+
+.generatesection{
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+h3{
+    color: #B91450;
+}
+
+.generatesection input{
+    border-color: #B91450;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.generatesection select{
+    border-color: #B91450;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.generatesection input:focus-visible{
+    outline: 0;
+}
+
+.generatesection select:focus-visible{
+    outline: 0;
+}
+
+.generatesection button{
+    background-color: #cccccc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #b91450;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.generatesection button:active{
+    border: 2px solid brown;
+}
