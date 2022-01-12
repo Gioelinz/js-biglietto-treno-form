@@ -10,17 +10,21 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 // Value
 const userName = document.getElementById("name-surname").value;
 const kilometers = document.getElementById("kms").value;
-const age = document.getElementById("age").value;
+const age = document.getElementById("age");
+const minorenne = document.getElementById("minorenne").value;
+
+// bottoni
+
+const elementGenerate = document.getElementById("generate");
+const elementDiscard = document.getElementById("discard");
 
 // stampare nel dom
 
 const elementName = document.getElementById("elementname");
-const elementKm = document.getElementById("elementkms");
+const elementPrice = document.getElementById("elementprice");
 const elementAge = document.getElementById("elementage");
 
-console.log(userName)
-console.log(kilometers)
-console.log(age)
+
 
 // ! calcolo sconto e preezzo
 
@@ -39,4 +43,18 @@ let off40 = finalKmPrice - finalKmPrice * 40 / 100;
 off40 = off40.toFixed(2);
 console.log('off40: ', off40);
 
-// !
+// ! creo eventi al click
+
+elementGenerate.addEventListener('click', function () {
+    elementName.innerHTML = userName;
+    if (age.value == "minorenne") {
+        elementAge.innerHTML = "Biglietto Ridotto";
+        elementPrice.innerHTML = off20 + "€";
+    } else if (age.value == "over65") {
+        elementAge.innerHTML = "Biglietto Ridotto";
+        elementPrice.innerHTML = off40 + "€"
+    } else {
+        elementAge.innerHTML = "Biglietto Standard";
+        elementPrice.innerHTML = finalKmPrice + "€";
+    }
+})
