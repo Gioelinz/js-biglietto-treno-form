@@ -9,9 +9,9 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 // Value
 const userName = document.getElementById("name-surname");
-const kilometers = document.getElementById("kms").value;
+const kilometers = document.getElementById("kms");
 const age = document.getElementById("age");
-const minorenne = document.getElementById("minorenne").value;
+
 
 // bottoni
 
@@ -26,28 +26,29 @@ const elementAge = document.getElementById("elementage");
 
 
 
-// ! calcolo sconto e preezzo
 
-let finalKmPrice = kilometers * 0.21;
-
-finalKmPrice = finalKmPrice.toFixed(2);
-
-console.log(finalKmPrice)
-
-let off20 = finalKmPrice - finalKmPrice * 20 / 100;
-off20 = off20.toFixed(2);
-console.log('off20: ', off20);
-
-
-let off40 = finalKmPrice - finalKmPrice * 40 / 100;
-off40 = off40.toFixed(2);
-console.log('off40: ', off40);
 
 // ! creo eventi al click
 
 elementGenerate.addEventListener('click', function () {
-    const userNameValue = userName.value
+    const userNameValue = userName.value;
+    const kmValue = kilometers.value;
 
+    // ! calcolo sconto e prezzo
+    let finalKmPrice = kmValue * 0.21;
+
+    finalKmPrice = finalKmPrice.toFixed(2);
+
+    console.log(finalKmPrice)
+
+    let off20 = finalKmPrice - finalKmPrice * 20 / 100;
+    off20 = off20.toFixed(2);
+    console.log('off20: ', off20);
+
+
+    let off40 = finalKmPrice - finalKmPrice * 40 / 100;
+    off40 = off40.toFixed(2);
+    console.log('off40: ', off40);
 
     elementName.innerHTML = userNameValue;
     if (age.value == "minorenne") {
