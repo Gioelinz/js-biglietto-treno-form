@@ -8,7 +8,7 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 */
 
 // Value
-const userName = document.getElementById("name-surname").value;
+const userName = document.getElementById("name-surname");
 const kilometers = document.getElementById("kms").value;
 const age = document.getElementById("age");
 const minorenne = document.getElementById("minorenne").value;
@@ -46,7 +46,10 @@ console.log('off40: ', off40);
 // ! creo eventi al click
 
 elementGenerate.addEventListener('click', function () {
-    elementName.innerHTML = userName;
+    const userNameValue = userName.value
+
+
+    elementName.innerHTML = userNameValue;
     if (age.value == "minorenne") {
         elementAge.innerHTML = "Biglietto Ridotto";
         elementPrice.innerHTML = off20 + "€";
