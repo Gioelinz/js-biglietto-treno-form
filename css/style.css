@@ -43,3 +43,28 @@ h3{
 .generatesection button:active{
     border: 2px solid brown;
 }
+
+.ticketsection{
+    background-color: #fff;
+    height: 200px;
+    display: none;
+}
+
+.passengersection{
+    background-color: gray;
+    height: 150px;
+}
+
+#elementname{
+    font-weight: bold;
+}
+
+.ticket{
+    height: 150px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.active{
+    display: block;
+}

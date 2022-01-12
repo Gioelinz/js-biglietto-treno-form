@@ -23,6 +23,7 @@ const elementDiscard = document.getElementById("discard");
 const elementName = document.getElementById("elementname");
 const elementPrice = document.getElementById("elementprice");
 const elementAge = document.getElementById("elementage");
+const ticketGenerate = document.querySelector('.ticketsection')
 
 
 
@@ -31,6 +32,7 @@ const elementAge = document.getElementById("elementage");
 // ! creo eventi al click
 
 elementGenerate.addEventListener('click', function () {
+    ticketGenerate.classList.add('active')
     const userNameValue = userName.value;
     const kmValue = kilometers.value;
 
