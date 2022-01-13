@@ -23,7 +23,11 @@ const elementDiscard = document.getElementById("discard");
 const elementName = document.getElementById("elementname");
 const elementPrice = document.getElementById("elementprice");
 const elementAge = document.getElementById("elementage");
-const ticketGenerate = document.querySelector('.ticketsection')
+const ticketGenerate = document.querySelector('.ticketsection');
+const elementCarrozza = document.getElementById("carrozza");
+const elementCp = document.getElementById("cp");
+
+// numeri cp & carrozza
 
 
 
@@ -34,8 +38,10 @@ const ticketGenerate = document.querySelector('.ticketsection')
 elementGenerate.addEventListener('click', function () {
     ticketGenerate.classList.add('active')
     const userNameValue = userName.value;
-    const kmValue = kilometers.value;
+    const kmValue = parseInt(kilometers.value);
 
+    const cpNumber = Math.floor(Math.random() * (100000 - 90000 + 1)) + 90000;
+    const carrozzaNumber = Math.floor(Math.random() * 12) + 1;
     // ! calcolo sconto e prezzo
     let finalKmPrice = kmValue * 0.21;
 
@@ -53,6 +59,8 @@ elementGenerate.addEventListener('click', function () {
     console.log('off40: ', off40);
 
     elementName.innerHTML = userNameValue;
+    elementCarrozza.innerHTML = carrozzaNumber;
+    elementCp.innerHTML = cpNumber;
     if (age.value == "minorenne") {
         elementAge.innerHTML = "Biglietto Ridotto";
         elementPrice.innerHTML = off20 + "€";
@@ -63,4 +71,9 @@ elementGenerate.addEventListener('click', function () {
         elementAge.innerHTML = "Biglietto Standard";
         elementPrice.innerHTML = finalKmPrice + "€";
     }
+})
+
+elementDiscard.addEventListener('click', function () {
+    userName.value = '';
+    kilometers.value = '';
 })
